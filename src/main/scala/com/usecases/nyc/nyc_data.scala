@@ -68,8 +68,8 @@ object nyc_data {
       .addHashPartitions(List("tpep_pickup_datetime").asJava, 3))
 
   val kuduOptions: Map[String, String] = Map(
-    "kudu.table" -> "test_spark_table",
-    "kudu.master" -> "master3.valhalla.phdata.io:7051,master2.valhalla.phdata.io:7051,master1.valhalla.phdata.io:7051")
+    "kudu.table" -> "<table_name>",
+    "kudu.master" -> "<kudu_master_cluster>")
 
   kuduContext.insertRows(interval2, "test_spark_table")
 
